@@ -1,33 +1,30 @@
-// function greating(message){
+//spread and rest operator
+//... we can use this to combine two arrays into one or combine two objects into one
+//eg: in a certain situation you have data of a state and want to add aditional data from API in such situation spread will be helpful 
+var mountains = ['Everest', 'Fish Tail', 'Annapurna'];
+var mountainsFromJapan = ['Fuji'];
 
-//     return alert(`${message} everyone..`);
+var allMountains = [...mountains, ...mountainsFromJapan];
+console.log(allMountains);
 
-// }
 
-//you can write the above function in a single line using arrow function which is an annonymous function. does not have a function name
-//in this function if there are more thanone argument should use paranthesis (message, one, two) else not need ()
 
-let greating = message => alert(`${message} everyone..`);
+//spread with object
+var day = {
+    breakfast: 'bread with jam',
+    lunch: 'rice and curry'
+}
 
-// greating('Good Evening')
-//multiple return statement required cruirly braces and return keyword
+var night = {
+    dinner: 'noodles'
+}
 
-let createBlog = (title, body) => {
-    
-    if(!title){
-        throw new Error('A title is required');
-    }
+var picnic = {...day, ...night}
+console.log(picnic);
 
-    if (!body) {
-        throw new Error('Body Cant be empty');
-    }
-
-return alert(`${title} - ${body}`);
-
-} 
-
-//createBlog('blog title', 'blog body');
-
-//function without arguments
-let srgBlog = () => alert('This function does not heve argumetns');
-srgBlog();
+//rest 
+var riversInSriLanka = ['mahaweli ganga', 'sudu ganga', 'kalani ganga', 'Theduru oya'];
+//array destructure this can be use in the same way in object also
+var [first, ...rest] = riversInSriLanka;
+console.log(first);
+console.log(rest);
